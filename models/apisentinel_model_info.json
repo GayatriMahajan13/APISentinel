@@ -1,0 +1,21 @@
+{
+    "project_name": "APISentinel",
+    "model": "XGBoost",
+    "dataset": "CSIC 2010",
+    "number_of_features": 8,
+    "features": [
+        "payload_len",
+        "url_len",
+        "param_count",
+        "special_char_count",
+        "digit_count",
+        "encoded_char_count",
+        "path_depth",
+        "payload_entropy"
+    ],
+    "accuracy": 0.9887429643527205,
+    "precision": 0.9965986394557823,
+    "recall": 0.9832214765100671,
+    "f1_score": 0.9898648648648649,
+    "roc_auc": 0.9979080394116808
+}

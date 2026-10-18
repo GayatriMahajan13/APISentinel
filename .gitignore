@@ -1,0 +1,35 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Frontend dependencies and builds
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Local databases and backups
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Operating system and editor files
+.DS_Store
+.vscode/
+
+# Logs
+*.log
+
+# Generated test output
+frontend/test-results/
+
+# Local backup files
+backend/features_backup.py

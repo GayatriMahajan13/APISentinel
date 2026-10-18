@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #0b101a;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  color: #0b101a;
+  background: #4fd1c5;
+}
+
+@layer components {
+  .panel-card {
+    @apply rounded-xl border border-line bg-panel shadow-panel;
+  }
+
+  .icon-button {
+    @apply relative grid size-9 shrink-0 place-items-center rounded-lg border border-transparent text-slate-400 transition-colors hover:border-line hover:bg-white/[0.03] hover:text-text-primary;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-xs font-semibold text-[#0B1719] transition-colors hover:bg-[#7be1d7] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-9 items-center gap-2 rounded-lg border border-line bg-white/[0.025] px-3 py-2 text-xs font-medium text-slate-300 transition-colors hover:border-slate-500 hover:text-text-primary disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .form-control {
+    @apply block w-full rounded-lg border border-line bg-[#101927] px-3 py-2.5 text-sm text-text-primary outline-none transition-colors placeholder:text-slate-600 focus:border-accent/50;
+  }
+
+  .data-table {
+    @apply w-full border-collapse text-left text-xs;
+  }
+
+  .data-table th {
+    @apply border-b border-line bg-black/[0.08] px-4 py-3 text-[10px] font-medium uppercase tracking-wide text-slate-500;
+  }
+
+  .data-table td {
+    @apply border-b border-line/60 px-4 py-3 text-slate-400 last:border-b-0;
+  }
+
+  .eyebrow {
+    @apply text-[10px] font-semibold uppercase tracking-[0.17em] text-slate-500;
+  }
+
+  .field-label {
+    @apply block text-xs font-medium text-slate-300;
+  }
+
+  .field-wrap {
+    @apply mt-2 flex h-11 items-center gap-2.5 rounded-lg border border-line bg-white/[0.025] px-3 text-slate-500 transition-colors focus-within:border-accent/50;
+  }
+
+  .field-wrap input {
+    @apply min-w-0 flex-1 bg-transparent text-sm text-text-primary outline-none placeholder:text-slate-600;
+  }
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  body,
+  #root,
+  #root > div {
+    background: #fff !important;
+    color: #111827 !important;
+  }
+
+  aside,
+  header,
+  button,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .panel-card {
+    border-color: #d1d5db !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .data-table th,
+  .data-table td {
+    border-color: #d1d5db !important;
+    background: #fff !important;
+    color: #1f2937 !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  dt,
+  dd {
+    color: #111827 !important;
+  }
+}
